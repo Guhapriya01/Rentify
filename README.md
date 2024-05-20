@@ -47,7 +47,7 @@ This rental website provides a platform for users to search for properties, mana
 ## Running / Development
 
 - `npm run start`
-- Visit your app at [http://localhost:4200](http://localhost:4200).
+- Visit the app at [http://localhost:4200](http://localhost:4200).
 
 ## Building
 
@@ -55,6 +55,6 @@ This rental website provides a platform for users to search for properties, mana
 
 ## Deploying
 
-Deployed to Render
+Deployed to **Render**
 
-- [Rentify](https://rentify-jtym.onrender.com/)
+- [Rentify](https://rentify-g4hw.onrender.com/)
