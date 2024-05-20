@@ -1,0 +1,48 @@
+{{page-title "Signup"}}
+<div class="signup-form">
+  <h2>Sign Up</h2>
+ <form id="registerForm">
+     <div class="form-group">
+      <label>I am</label>
+      <div class="radio-group">
+        <div class="radio-item">
+          <input type="radio" id="buyer" name="type" value="Buyer">
+          <label for="buyer">Buyer</label>
+        </div>
+        <div class="radio-item">
+          <input type="radio" id="builder" name="type" value="Seller">
+          <label for="builder">Seller</label>
+        </div>
+      </div>
+    </div>
+
+      <div class="form-group">
+        <label for="FirstName">First Name:</label>
+        <input type="text" id="FirstName" name="FirstName" required>
+      </div>
+        
+         <div class="form-group">
+        <label for="LastName">Last Name:</label>
+        <input type="text" id="LastName" name="LastName" required>
+         </div>
+         <div class="form-group">
+        <label for="PhoneNumber">Phone Number:</label>
+        <input type="text" id="PhoneNumber" name="PhoneNumber" required>
+         </div>
+         
+        <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+         </div>
+        
+         <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+         </div>
+        
+        <button class="btn" type="button" {{action "register"}}>Register</button>
+    </form>
+    <div class="remainder">
+    Already registered? <LinkTo @route="login">Login Now</LinkTo>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+{{!-- {{page-title "Index"}}
+<div class="search-bar">
+  <label>Property Type:
+    <input type="text" value={{this.tempPropertyType}} oninput={{action (mut this.tempPropertyType) value="target.value"}}>
+  </label>
+  <label>Min Price:
+    <input type="number" value={{this.tempMinPrice}} oninput={{action (mut this.tempMinPrice) value="target.value"}}>
+  </label>
+  <label>Max Price:
+    <input type="number" value={{this.tempMaxPrice}} oninput={{action (mut this.tempMaxPrice) value="target.value"}}>
+  </label>
+  <label>Min Bedrooms:
+    <input type="number" value={{this.tempMinBedrooms}} oninput={{action (mut this.tempMinBedrooms) value="target.value"}}>
+  </label>
+  <label>Max Bedrooms:
+    <input type="number" value={{this.tempMaxBedrooms}} oninput={{action (mut this.tempMaxBedrooms) value="target.value"}}>
+  </label>
+  <button type="button" {{on "click" this.applyFilters}}>Apply Filters</button>
+</div> --}}
+
+<div class="search-container">
+  <div class="search-box">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Enter Place or City..."  value={{this.tempAddress}} oninput={{action (mut this.tempAddress) value="target.value"}}>
+  </div>
+</div>
+
+<div class="filter-options" id="filter-options">
+  <label>Property Type:
+    <input type="text" value={{this.tempPropertyType}} oninput={{action (mut this.tempPropertyType) value="target.value"}}>
+  </label>
+  <label>Min Price:
+    <input type="text" value={{this.tempMinPrice}} oninput={{action (mut this.tempMinPrice) value="target.value"}}>
+  </label>
+  <label>Max Price:
+    <input type="text" value={{this.tempMaxPrice}} oninput={{action (mut this.tempMaxPrice) value="target.value"}}>
+  </label>
+  <label>Min Bedrooms:
+    <input type="text" value={{this.tempMinBedrooms}} oninput={{action (mut this.tempMinBedrooms) value="target.value"}}>
+  </label>
+  <label>Max Bedrooms:
+    <input type="text" value={{this.tempMaxBedrooms}} oninput={{action (mut this.tempMaxBedrooms) value="target.value"}}>
+  </label>
+</div>
+
+<div class="apply-filters-container">
+  <button type="button" class="apply-filters-button" {{on "click" this.applyFilters}}>Apply Filters</button>
+  <button type="button" class="apply-filters-button" {{on "click" this.clearFilters}}>Clear Filters</button>
+</div>
+<div class="cards-container">
+  {{#each this.paginatedRentals as |data|}}
+    <Card @property={{data}} />
+  {{else}}
+    <p>No rentals Available Now!</p>
+  {{/each}}
+</div>
+
+
+{{!-- <div align="center" class="pagination-controls">
+  <button {{on "click" this.previousPage}} disabled={{this.isFirstPage}}>Previous</button>
+  <span>Page {{this.page}} of {{this.totalPages}}</span>
+  <button {{on "click" this.nextPage}} disabled={{this.isLastPage}}>Next</button>
+</div> --}}
+
+<div class="pagination-controls">
+  <button class="pagination-button" disabled={{this.isFirstPage}} type="button" {{on "click" this.previousPage}}><i class="fa fa-arrow-left" aria-hidden="true"></i>
+</button>
+  <span class="pagination-info">{{this.page}} of {{this.totalPages}}</span>
+  <button class="pagination-button" disabled={{this.isLastPage}} type="button" {{on "click" this.nextPage}}><i class="fa fa-arrow-right" aria-hidden="true"></i>
+</button>
+</div>

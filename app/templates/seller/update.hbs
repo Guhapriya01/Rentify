@@ -1,0 +1,43 @@
+{{page-title "Update"}}
+<h2 style="text-align: center">Update</h2>
+<div class="login-form">
+<form class="form-admin" id="update-form" >
+
+	<input type="number" name="propId" value={{this.model.propertyID}} hidden="true">
+
+ <div class="form-group">
+  <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" value={{this.model.address}}>
+ </div>
+  <div class="form-group">
+        <label for="area_sq_ft">Area (sq ft):</label><br>
+        <input type="number" id="area_sq_ft" name="area" value={{this.model.areaSqFt}}></div>
+
+ <div class="form-group">
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" value={{this.model.description}}></textarea></div>
+
+ <div class="form-group">
+        <label for="nearby_landmarks">Nearby Landmarks:</label><br>
+        <input type="text" id="nearby_landmarks" name="nearby" value={{this.model.nearbyLandmarks}}></div>
+ <div class="form-group">
+        <label for="number_of_bathrooms">Number of Bathrooms:</label><br>
+        <input type="number" id="number_of_bathrooms" name="bathrooms" value={{this.model.numberOfBathrooms}}></div>
+
+ <div class="form-group">
+        <label for="number_of_bedrooms">Number of Bedrooms:</label><br>
+        <input type="number" id="number_of_bedrooms" name="bedrooms" value={{this.model.numberOfBedrooms}}></div>
+
+ <div class="form-group">
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price" value={{this.model.price}}></div>
+ <div class="form-group">
+        <label for="property_type">Property Type:</label><br>
+        <input type="text" id="property_type" name="type" value={{this.model.propertyType}}></div>
+         <div class="form-group">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value={{this.model.title}}></div>
+        
+        <button class="btn btn-primary" type="submit" {{action "update"}}>Edit</button>
+</form>
+</div>

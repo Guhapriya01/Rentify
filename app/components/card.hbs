@@ -1,0 +1,16 @@
+<div class="card">
+    <p class='card-title'>{{@property.title}}</p>
+            <p class='card-price'>₹ {{@property.price}}</p>
+            <p class='card-details'>{{@property.description}}</p>
+            <p class='card-details'>Address: {{@property.address}}</p>
+            <p class='card-details'>Type: {{@property.propertyType}}</p>
+            <p class='card-details'>Area: {{@property.areaSqFt}} sq ft</p>
+            <p class='card-details'>Bedrooms: {{@property.numberOfBedrooms}}, Bathrooms: {{@property.numberOfBathrooms}}</p>
+            <p class='card-details'>Nearby: {{@property.nearbyLandmarks}}</p>
+        
+            <div class="card-buttons">
+                <button class="card-button like" {{action this.toggleLike}} type="button"><i class="fas fa-heart"></i>Like ({{this.likeCount}})</button>
+                <LinkTo @route="rentals.rental" @model={{@property.propertyID}} class="card-button interest" type="button"><i class="fas fa-envelope"></i>I'm Interested</LinkTo>
+                <button class="card-button view" type="button"><i class="fas fa-eye"></i>Views ({{this.viewCount}})</button>
+            </div>
+</div>

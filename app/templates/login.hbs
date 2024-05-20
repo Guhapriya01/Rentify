@@ -1,0 +1,21 @@
+{{page-title "Login"}}
+<div class="login-form">
+  <h2>Login</h2>
+    <form id="add-form">
+         <div class="form-group">
+         <label for="email">Email</label>
+    <Input id="email" name="email" type="text"/>
+         </div>
+
+          <div class="form-group">
+
+    <label for="pwd">Password</label>
+    <Input id="pwd" name="password" @type="password"/>
+          </div>
+
+    <button class="btn btn-primary" type="button" {{action "login"}}>Login</button>
+    </form>
+   <div class="remainder">
+    New to Rentify? <LinkTo @route="signup">Sign Up Here</LinkTo>   
+  </div>
+</div>

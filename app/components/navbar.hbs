@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="navbar-brand"><LinkTo @route="home"> <i style='font-size:24px' class='fas'>&#xf52b;</i> Rentify</LinkTo></div>
+  <ul class="navbar-links">
+    {{#if this.authentication.user}}
+    <li><button class="logout" type="button" {{action "logout"}}>Logout</button></li>
+      {{#if this.seller}}
+        <LinkTo @route="seller.index" @model={{this.seller}}>Your Properties</LinkTo>
+      {{else}}
+        <li><LinkTo @route="rentals">Rentals</LinkTo></li>
+      {{/if}}
+    {{else}}
+    <li><LinkTo @route="login">Login</LinkTo></li>
+    <li><LinkTo @route="signup">Signup</LinkTo></li>
+    <li><LinkTo @route="rentals">Rentals</LinkTo></li>
+    {{/if}}
+  </ul>
+</nav>

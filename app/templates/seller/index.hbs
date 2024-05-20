@@ -1,0 +1,91 @@
+{{page-title "Index"}}
+
+<h2 style="text-align: center">Add Your Property</h2>
+<div class="login-form">
+<form class="form-add" id="add-form">
+
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+    </div>
+
+    <div class="form-group">
+        <label for="area_sq_ft">Area (sq ft):</label>
+        <input type="number" id="area_sq_ft" name="area" required>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="desc"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="nearby_landmarks">Nearby Landmarks:</label>
+        <input type="text" id="nearby_landmarks" name="nearby">
+    </div>
+
+    <div class="form-group">
+        <label for="number_of_bathrooms">Number of Bathrooms:</label>
+        <input type="number" id="number_of_bathrooms" name="bathrooms" required>
+    </div>
+
+    <div class="form-group">
+        <label for="number_of_bedrooms">Number of Bedrooms:</label>
+        <input type="number" id="number_of_bedrooms" name="bedrooms" required>
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price">
+    </div>
+
+    <div class="form-group">
+        <label for="property_type">Property Type:</label>
+        <input type="text" id="property_type" name="type">
+    </div>
+
+    <input type="number" id="seller_id" name="sellerid" hidden="true" value={{this.model.id}}>
+
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title">
+    </div>
+
+    <button  class="btn btn-primary" type="submit" {{action "add"}}>Add</button>
+
+</form>
+</div>
+
+<h2 align="center" style="padding: 30px;">Manage Your Properties</h2>
+
+<div class="property-container">
+  {{#each this.model.properties as |property|}}
+  <div class="property-card">
+    <div class="property-details">
+      <h2>{{property.title}}</h2>
+      <p>{{property.description}}</p>
+      
+      <p><strong>Address:</strong> {{property.address}}</p>
+      <p><strong>Area:</strong> {{property.areaSqFt}} sq ft</p>
+      <p><strong>Price:</strong> ₹ {{property.price}} </p>
+      
+      <p><strong>Type:</strong> {{property.propertyType}}</p>
+      <p><strong>Bedrooms:</strong> {{property.numberOfBedrooms}}, <strong>Bathrooms:</strong> {{property.numberOfBathrooms}}</p>
+      <p><strong>Nearby:</strong> {{property.nearbyLandmarks}}</p>
+    </div>
+    <div class="buttons">
+      <button {{action (fn this.delete property.propertyID)}} class="delete-button" type="button">
+        <i class="fas fa-trash-alt"></i> Delete
+      </button>
+      <LinkTo @route="seller.update" @model={{property.propertyID}} class="update-button" type="button">
+        <i class="fas fa-edit"></i> Update
+      </LinkTo>
+    </div>
+  </div>
+  {{else}}
+  <p>No rental here! Add One!</p>
+  {{/each}}
+</div>
+
+
+{{outlet}}
