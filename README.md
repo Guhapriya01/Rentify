@@ -19,18 +19,6 @@ This rental website provides a platform for users to search for properties, mana
   - When the buyer likes a property the like count of that property increases in real time.
   - When the buyer expresses interest in a property the view count of that property also increases in real time.
 
-## Technologies Used
-
-- Frontend
-  - HTML
-  - CSS
-  - JavaScript
-  - Ember.js
-- Backend
-  - Spring Boot
-- Database
-  - MySQL
-
 ## Prerequisites
 
 - [Git](https://git-scm.com/)
@@ -52,9 +40,3 @@ This rental website provides a platform for users to search for properties, mana
 ## Building
 
 - `npm run build` (production)
-
-## Deploying
-
-Deployed to **Render**
-
-- [Rentify](https://rentify-g4hw.onrender.com/)
